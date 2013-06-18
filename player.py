@@ -14,12 +14,8 @@ class Player(GameObject):
     self.background_position['y'] = y
     self.set_rect()
 
-    #collisions = pygame.sprite.spritecollide(self, self.background.collidable, False)
     walkable = pygame.sprite.spritecollide(self, self.background.walkable, False)
-    # if len(collisions) > 0:
-      # self.background_position['x'] = old_x
-      # self.background_position['y'] = old_y
-      # self.set_rect()
+  
     if len(walkable) == 0:
       self.background_position['x'] = old_x
       self.background_position['y'] = old_y

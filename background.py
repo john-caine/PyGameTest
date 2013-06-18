@@ -5,9 +5,7 @@ from constants import *
 from tile import *
 
 class Background:
-  def __init__(self, rows, columns):
-    self.rows = rows
-    self.columns = columns
+  def __init__(self):
     self.tiles = pygame.sprite.Group()
     self.walkable = pygame.sprite.Group()
 
@@ -15,7 +13,6 @@ class Background:
     for line in open('background.txt'):
       x = 0
       for character in line:
-        self.rows += 1
         if character == 'w':
           WaterTile(self, x, y)
         elif character == 'g':
